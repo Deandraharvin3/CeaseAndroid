@@ -19,7 +19,7 @@ public class Module1 extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Module1.this, Mod1Question1.class);
+                Intent i = new Intent(Module1.this, Mod1Questions.class);
                 startActivity(i);
             }
         });
