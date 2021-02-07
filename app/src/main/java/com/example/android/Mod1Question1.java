@@ -17,7 +17,7 @@ public class Mod1Question1 extends AppCompatActivity {
         setContentView(R.layout.activity_mod1_question1);
 
         tvResponse = findViewById(R.id.tvResponse);
-        btnQuestion2 = findViewById(R.id.btnQuestion2);
+        btnQuestion2 = findViewById(R.id.btnQuestion3);
         btnFalse = findViewById(R.id.btnFalse);
         btnFalse.setOnClickListener(new View.OnClickListener() {
             @Override
