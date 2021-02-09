@@ -23,12 +23,20 @@ public class Lesson1Complete extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             value = extras.getString("key");
-            if(value.equals("lesson2")) {
-                tvComplete.setText("Congratulations, you have completed Lesson 2!");
-            } else if(value.equals("lesson3")) {
-                tvComplete.setText("Congratulations, you have completed all of the lessons in Module 1!");
-            } else {
-                tvComplete.setText("Congratulations, you have completed all of the Module 1 activities! This is a big accomplishment- pat yourself on the back!");
+
+            switch (value) {
+                case "lesson1":
+                    tvComplete.setText("Congratulations, you have completed Lesson 1!\n Click next to begin Lesson 2");
+                    break;
+                case "lesson2":
+                    tvComplete.setText("Congratulations, you have completed Lesson 2!\n Click next to begin Lesson 3");
+                    break;
+                case "lesson3":
+                    tvComplete.setText("Congratulations, you have completed all of the lessons in Module 1!\n Click next to begin Activities");
+                    break;
+                default:
+                    tvComplete.setText("Congratulations, you have completed all of the Module 1 activities! This is a big accomplishment- pat yourself on the back!\n Click next to begin Module 2");
+                    break;
             }
         }
 
@@ -51,6 +59,5 @@ public class Lesson1Complete extends AppCompatActivity {
                 }
             }
         });
-
     }
 }

@@ -54,7 +54,7 @@ public class Lesson1Web extends AppCompatActivity {
                     lesson = "lesson2";
                 }else if(results[2].equals("3")) {
                     lesson = "lesson3";
-                }else if(results[2].equals("end1")) {
+                }else {
                     lesson = "end1";
                 }
 

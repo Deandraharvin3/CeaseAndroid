@@ -11,12 +11,14 @@ import android.widget.TextView;
 public class Login extends AppCompatActivity {
 
     ImageView nextbtn;
+    TextView tvSignup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        TextView tvSignup = (TextView) findViewById(R.id.tvSignup);
+
+        tvSignup = (TextView) findViewById(R.id.tvSignup);
         tvSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
