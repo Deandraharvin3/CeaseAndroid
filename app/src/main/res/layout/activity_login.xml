@@ -13,18 +13,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/archivo_black"
-        android:text="CEASE(Communities Engaged and Advocating for a smoke-free Environment) is a community-driven smoking cessation initiative that evolved through collaboration between Morgan State University and Baltimore communities with a mission to educate, encourage, and support individuals to choose a smoke-free lifestyle."
-        android:textColor="#d91c4c"
+        android:text="This program was developed to help you break the smoking habit and get back in control. We arm you with the facts and tools you need, help you develop coping skills, and offer you support along the way. You can do it. We can help!
+        \n\nThe program has three modules, each with lessons and activities. As you achieve the lesson objectives, you will move closer to your quit goal!"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/nextbtn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="136dp"
-        android:layout_height="133dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:src="@mipmap/ic_cease_round"
@@ -52,5 +55,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/next" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/archivo_black"
+        android:text="Welcome to the CEASE Digital Tobacco Cessation Program"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/cease_red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

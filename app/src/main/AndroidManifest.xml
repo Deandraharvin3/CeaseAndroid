@@ -11,16 +11,17 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Android">
-        <activity android:name=".Mod1Web"></activity>
-        <activity android:name=".Mod1Video" />
-        <activity android:name=".Mod1Questions" />
+        android:theme="@style/Theme.Android"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Lesson2"></activity>
+        <activity android:name=".Module2" />
+        <activity android:name=".Lesson1Complete" />
+        <activity android:name=".Lesson1Web" />
         <activity
-            android:name=".Module1"
+            android:name=".Lesson1"
             android:label="@string/mod1_name" />
-        <activity android:name=".MainActivity2" />
+        <activity android:name=".Module1" />
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

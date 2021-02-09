@@ -3,15 +3,10 @@ package com.example.android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.regex.Pattern;
 
 public class Login extends AppCompatActivity {
 
@@ -25,7 +20,7 @@ public class Login extends AppCompatActivity {
         tvSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Login.this, MainActivity2.class);
+                Intent i = new Intent(Login.this, Module1.class);
                 startActivity(i);
             }
         });
@@ -34,7 +29,7 @@ public class Login extends AppCompatActivity {
         nextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Login.this, MainActivity2.class);
+                Intent i = new Intent(Login.this, Module1.class);
                 startActivity(i);
             }
         });
