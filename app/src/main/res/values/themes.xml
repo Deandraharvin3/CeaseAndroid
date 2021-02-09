@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Android" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/cease_mustard</item>
-        <item name="colorPrimaryVariant">@color/cease_tan</item>
+        <item name="colorPrimary">@color/cease_red</item>
+        <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Cease</string>
-    <string name="mod1_name">MODULE 1: Motivating and Preparing</string>
+    <string name="mod1_name">Module 1</string>
+    <string name="mod2_name">Module 2</string>
 </resources>
