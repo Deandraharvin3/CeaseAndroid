@@ -2,6 +2,7 @@ package com.example.android;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcel;
 import android.util.Config;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +28,8 @@ public class Mod1Adapter extends RecyclerView.Adapter<Mod1Adapter.ViewHolder> {
     @NonNull
     @Override
     public Mod1Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
+        // get the context and create inflater
+        context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
         // Inflate the custom layout
@@ -62,6 +64,18 @@ public class Mod1Adapter extends RecyclerView.Adapter<Mod1Adapter.ViewHolder> {
                 if (mQuestions.getAnswer()) {
                     response.setText("Correct!\n" + mQuestions.getResponse() + " Scroll down");
                     answerCount += 1;
+                    if (answerCount >= questions.size()) {
+                        next.setVisibility(View.VISIBLE);
+                        next.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                Intent intent = new Intent(context, Mod1Video.class);
+                                intent.putExtra(Mod1Class.class.getSimpleName(), "none");
+                                context.startActivity(intent);
+                            }
+                        });
+                    }
 
                 } else {
                     response.setText("Incorrect!\n" + mQuestions.getResponse());
@@ -72,26 +86,28 @@ public class Mod1Adapter extends RecyclerView.Adapter<Mod1Adapter.ViewHolder> {
         rfalse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (!mQuestions.getAnswer()) {
                     response.setText("Correct!\n" + mQuestions.getResponse() + " Scroll down");
                     answerCount += 1;
+                    if (answerCount >= questions.size()) {
+                        next.setVisibility(View.VISIBLE);
+                        next.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
 
+                                Intent intent = new Intent(context, Mod1Video.class);
+                                intent.putExtra(Mod1Class.class.getSimpleName(), "none");
+                                context.startActivity(intent);
+                            }
+                        });
+                    }
                 } else {
                     response.setText("Incorrect!\n" + mQuestions.getResponse());
                 }
             }
         });
-        if (answerCount >= questions.size()) {
-            next.setVisibility(View.VISIBLE);
-            next.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
 
-                    Intent intent = new Intent(context, Module1.class);
-                    context.startActivity(intent);
-                }
-            });
-        }
     }
 
     @Override

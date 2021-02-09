@@ -6,10 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class Module1 extends AppCompatActivity {
 
-    Button btnStart;
+    ImageView btnStart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +20,7 @@ public class Module1 extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Module1.this, Mod1Questions.class);
+                Intent i = new Intent(Module1.this, Mod1Web.class);
                 startActivity(i);
             }
         });
