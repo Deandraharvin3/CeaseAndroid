@@ -45,16 +45,22 @@ public class Lesson1Web extends AppCompatActivity {
             ivMod1.setVisibility(View.VISIBLE);
         }
         ivMod1.setOnClickListener(new View.OnClickListener() {
+            String lesson;
             @Override
             public void onClick(View v) {
                 if (results[2].equals("1")) {
-                    Intent i = new Intent(Lesson1Web.this, Lesson1Complete.class);
-                    startActivity(i);
+                    lesson = "lesson1";
                 } else if(results[2].equals("2")) {
-                    Intent i = new Intent(Lesson1Web.this, Lesson1Complete.class);
-                    i.putExtra("key","lesson2");
-                    startActivity(i);
+                    lesson = "lesson2";
+                }else if(results[2].equals("3")) {
+                    lesson = "lesson3";
+                }else if(results[2].equals("end1")) {
+                    lesson = "end1";
                 }
+
+                Intent i = new Intent(Lesson1Web.this, Lesson1Complete.class);
+                i.putExtra("key",lesson);
+                startActivity(i);
             }
         });
     }

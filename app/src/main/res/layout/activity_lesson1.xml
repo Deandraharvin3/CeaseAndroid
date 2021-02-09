@@ -17,7 +17,7 @@
         android:text="In this lesson you will learn about the harmful effects, and the reasons why we smoke"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#d91c4c"
-        app:layout_constraintBottom_toTopOf="@+id/btn2"
+        app:layout_constraintBottom_toTopOf="@+id/btn3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -46,7 +46,7 @@
         app:srcCompat="@mipmap/ic_thinking2" />
 
     <ImageView
-        android:id="@+id/btn2"
+        android:id="@+id/btn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

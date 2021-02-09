@@ -15,7 +15,7 @@ public class Lesson1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson1);
 
-        btnStart = findViewById(R.id.btn2);
+        btnStart = findViewById(R.id.btn3);
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

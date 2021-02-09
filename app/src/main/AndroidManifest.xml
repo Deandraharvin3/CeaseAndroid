@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Lesson2"></activity>
+        <activity android:name=".Main1Activity"></activity>
+        <activity android:name=".Lesson3" />
+        <activity android:name=".Lesson2" />
         <activity android:name=".Module2" />
         <activity android:name=".Lesson1Complete" />
         <activity android:name=".Lesson1Web" />

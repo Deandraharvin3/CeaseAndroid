@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Lesson2">
+    tools:context=".Lesson3">
 
     <TextView
         android:id="@+id/textView3"
@@ -13,7 +13,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/archivo_black"
-        android:text="In this lesson, you will learn the benefits of being tobacco-free, and the barriers to quitting "
+        android:text="In this lesson, you will learn why and how you should quit. "
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#d91c4c"
         app:layout_constraintBottom_toTopOf="@+id/btn3"
@@ -28,7 +28,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/archivo_black"
-        android:text="Lesson 2- Facts about Quitting"
+        android:text="Lesson 3- Deciding To Quit "
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="#d91c4c"
         app:layout_constraintEnd_toEndOf="parent"
