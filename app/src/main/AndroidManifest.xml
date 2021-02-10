@@ -13,24 +13,35 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Main1Activity"
-            android:label="@string/mod1_name"/>
-        <activity android:name=".Lesson3"
-            android:label="@string/mod1_name"/>
-        <activity android:name=".Lesson2"
-            android:label="@string/mod1_name"/>
-        <activity android:name=".Module2"
-            android:label="@string/mod2_name"
-            android:banner="@color/cease_purple"/>
-        <activity android:name=".Lesson1Complete"
-            android:label="@string/mod1_name"/>
-        <activity android:name=".Lesson1Web"
-            android:label="@string/mod1_name"/>
+        <activity android:name=".Module2Web"></activity>
+        <activity android:name=".Module2Complete" />
+        <activity android:name=".Lesson5" />
+        <activity android:name=".Lesson4" />
+        <activity
+            android:name=".Main1Activity"
+            android:label="@string/mod1_name" />
+        <activity
+            android:name=".Lesson3"
+            android:label="@string/mod1_name" />
+        <activity
+            android:name=".Lesson2"
+            android:label="@string/mod1_name" />
+        <activity
+            android:name=".Module2"
+            android:banner="@color/cease_purple"
+            android:label="@string/mod2_name" />
+        <activity
+            android:name=".Lesson1Complete"
+            android:label="@string/mod1_name" />
+        <activity
+            android:name=".Lesson1Web"
+            android:label="@string/mod1_name" />
         <activity
             android:name=".Lesson1"
-            android:label="@string/mod1_name"/>
-        <activity android:name=".Module1"
-            android:label="@string/mod1_name"/>
+            android:label="@string/mod1_name" />
+        <activity
+            android:name=".Module1"
+            android:label="@string/mod1_name" />
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

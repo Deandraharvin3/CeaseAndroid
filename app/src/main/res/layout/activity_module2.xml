@@ -14,13 +14,13 @@
         android:fontFamily="@font/archivo_black"
         android:text="Quitting"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textColor="@color/cease_red"
+        android:textColor="@color/cease_purple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvMod1"
+        android:id="@+id/tvMod2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -31,14 +31,14 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/mod1btn"
+        app:layout_constraintBottom_toTopOf="@+id/mod2btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <ImageView
-        android:id="@+id/mod1btn"
+        android:id="@+id/mod2btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
