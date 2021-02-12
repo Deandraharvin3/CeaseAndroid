@@ -7,21 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class Lesson5 extends AppCompatActivity {
+public class Lesson6 extends AppCompatActivity {
 
-    ImageView btn5;
+    ImageView btn6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson5);
+        setContentView(R.layout.activity_lesson6);
 
-        btn5 = findViewById(R.id.btn5);
-
-        btn5.setOnClickListener(new View.OnClickListener() {
+        btn6 = findViewById(R.id.btn6);
+        btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String[] urls = {"http://www.ceasewebsite.com/new%20activity15.html", "http://www.ceasewebsite.com/congratsafterlesson5.html", "5"};
-                Intent i = new Intent(Lesson5.this, Module2Web.class);
+                String[] urls = {"http://www.ceasewebsite.com/new%20activity18%20or%20animation%20from%20pierce.html", "http://www.ceasewebsite.com/congratsafterlesson6.html", "6"};
+                Intent i = new Intent(Lesson6.this, Module2Web.class);
                 i.putExtra("key", urls);
                 startActivity(i);
             }

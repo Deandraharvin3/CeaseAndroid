@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cease_tan"
-    tools:context=".Lesson5">
+    tools:context=".Lesson6">
 
     <TextView
         android:id="@+id/textView3"
@@ -14,10 +14,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/archivo_black"
-        android:text="In this lesson, you will understand the different quit methods, and develop your own quit plan"
+        android:text="In this lesson, you will learn about withdrawal symptoms, and how to use Nicotine Replacement
+Therapy (NRT)"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cease_purple"
-        app:layout_constraintBottom_toTopOf="@+id/btn5"
+        app:layout_constraintBottom_toTopOf="@+id/btn6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -29,7 +30,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/archivo_black"
-        android:text="Lesson 5- Planning to Quit"
+        android:text="Lesson 6- Your Quit Day"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/cease_purple"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +47,7 @@
         app:srcCompat="@mipmap/ic_thinking2" />
 
     <ImageView
-        android:id="@+id/btn5"
+        android:id="@+id/btn6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

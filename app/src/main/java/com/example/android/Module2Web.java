@@ -20,15 +20,17 @@ public class Module2Web extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_module2_web);
 
-        ivLesson4 = findViewById(R.id.ivLesson4);
-        wvMod2 = findViewById(R.id.wvMod2);
-
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             results = extras.getStringArray("key");
             view2.setStartWeb(results[0]);
             view2.setEndWeb(results[1]);
         }
+
+        ivLesson4 = findViewById(R.id.ivLesson4);
+        wvMod2 = findViewById(R.id.wvMod2);
+        view2.showWeb(wvMod2);
+
         if (wvMod2.getUrl().equals(view2.getEndWeb())) {
             ivLesson4.setVisibility(View.VISIBLE);
         }
@@ -41,7 +43,7 @@ public class Module2Web extends AppCompatActivity {
                     lesson = "lesson4";
                 } else if(results[2].equals("5")) {
                     lesson = "lesson5";
-                }else if(results[2].equals("")) {
+                }else if(results[2].equals("6")) {
                     lesson = "lesson6";
                 }else {
                     lesson = "end2";
