@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cease_tan"
     tools:context=".Lesson4">
 
     <TextView
@@ -15,7 +16,7 @@
         android:fontFamily="@font/archivo_black"
         android:text="In this lesson, you will gain an understanding of the need for support, and how a quit buddy can help "
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#d91c4c"
+        android:textColor="@color/cease_purple"
         app:layout_constraintBottom_toTopOf="@+id/btn4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -30,7 +31,7 @@
         android:fontFamily="@font/archivo_black"
         android:text="Lesson 4- Quitting with Help"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textColor="#d91c4c"
+        android:textColor="@color/cease_purple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
