@@ -39,7 +39,7 @@ public class Module3Web extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (results[2].equals("7")) {
-                    lesson = "lesson4";
+                    lesson = "lesson7";
                 }else if(results[2].equals("Act3")) {
                     lesson = "activity";
                 }else {
