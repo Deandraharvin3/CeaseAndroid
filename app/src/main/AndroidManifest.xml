@@ -13,14 +13,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Module3Complete"></activity>
-        <activity android:name=".Module3Web" />
-        <activity android:name=".Module3" />
-        <activity android:name=".Lesson6" />
-        <activity android:name=".Module2Web" />
-        <activity android:name=".Module2Complete" />
-        <activity android:name=".Lesson5" />
-        <activity android:name=".Lesson4" />
+        <activity android:name=".Lesson7"></activity>
+        <activity
+            android:name=".Module3Complete"
+            android:label="@string/mod3_name" />
+        <activity
+            android:name=".Module3Web"
+            android:label="@string/mod3_name" />
+        <activity
+            android:name=".Module3"
+            android:label="@string/mod3_name" />
+        <activity
+            android:name=".Lesson6"
+            android:label="@string/mod2_name" />
+        <activity
+            android:name=".Module2Web"
+            android:label="@string/mod2_name" />
+        <activity
+            android:name=".Module2Complete"
+            android:label="@string/mod2_name" />
+        <activity
+            android:name=".Lesson5"
+            android:label="@string/mod2_name" />
+        <activity
+            android:name=".Lesson4"
+            android:label="@string/mod2_name" />
         <activity
             android:name=".Main1Activity"
             android:label="@string/mod1_name" />
