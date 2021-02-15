@@ -13,8 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Main3Activity"></activity>
-        <activity android:name=".Lesson7" />
+        <activity android:name=".Main3Activity"
+            android:label="@string/mod3_name"/>
+        <activity android:name=".Lesson7"
+            android:label="@string/mod3_name"/>
         <activity
             android:name=".Module3Complete"
             android:label="@string/mod3_name" />
