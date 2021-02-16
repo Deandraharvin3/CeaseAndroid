@@ -4,20 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff4df"
-    android:backgroundTint="#fff4df"
+    android:background="@drawable/cease_home"
+    android:backgroundTint="@color/cease_red"
+    android:backgroundTintMode="multiply"
     tools:context=".Login">
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/archivo_black"
-        android:text="This program was developed to help you break the smoking habit and get back in control. We arm you with the facts and tools you need, help you develop coping skills, and offer you support along the way. You can do it. We can help!
-        \n\nThe program has three modules, each with lessons and activities. As you achieve the lesson objectives, you will move closer to your quit goal!"
-        android:textColor="@color/black"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/montserrat"
+        android:text="CEASE Digital Tobacco Cessation Program"
+        android:textColor="@color/cease_tan"
+        android:textSize="47dp"
         app:layout_constraintBottom_toTopOf="@+id/nextbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -29,10 +31,10 @@
         android:layout_width="75dp"
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="67dp"
         android:src="@mipmap/ic_cease_round"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvSignup"
@@ -49,27 +51,41 @@
         android:id="@+id/nextbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginBottom="132dp"
         app:layout_constraintBottom_toTopOf="@+id/tvSignup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/next" />
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:srcCompat="@drawable/next_btn" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="152dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/archivo_black"
-        android:text="Welcome to the CEASE Digital Tobacco Cessation Program"
+        android:fontFamily="@font/reenie_beanie"
+        android:text="Welcome to the "
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/cease_red"
+        android:textColor="@color/cease_tan"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/reenie_beanie"
+        android:text="Lets get Started"
+        android:textColor="@color/cease_red"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/nextbtn"
+        app:layout_constraintEnd_toEndOf="@+id/nextbtn"
+        app:layout_constraintStart_toStartOf="@+id/nextbtn"
+        app:layout_constraintTop_toTopOf="@+id/nextbtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
