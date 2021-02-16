@@ -11,56 +11,87 @@
 
     <TextView
         android:id="@+id/tvDescript"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/archivo_black"
-        android:text="Motivating and Preparing"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/montserrat_alternates_thin_italic"
+        android:text="Welcome to"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textColor="@color/cease_red"
+        android:textColor="@color/cease_tan"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.801" />
 
     <TextView
         android:id="@+id/tvMod1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:fontFamily="@font/archivo_black"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="104dp"
+        android:fontFamily="@font/montserrat_light"
         android:maxLines="10"
-        android:text="Lesson 1: Facts about tobacco\nLesson 2: Facts about quitting\nLesson 3: Deciding to quit\nActivities"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textColor="@color/black"
+        android:text="This module includes three lessons to help increase your knowledge about smoking, and help get you motivated to quit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/cease_tan"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/mod1btn"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/mod1btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/next" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="73dp"
+        android:layout_marginStart="24dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/archivo_black"
-        android:text="This module includes three lessons to help increase your knowledge about smoking, and help get you motivated to quit."
-        android:textColor="@color/black"
+        android:layout_marginBottom="48dp"
+        android:fontFamily="@font/montserrat_extra_bold"
+        android:text="Module 1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/cease_tan"
+        app:layout_constraintBottom_toTopOf="@+id/tvMod1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="356dp"
+        android:layout_height="147dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/mod1btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/rectangle1" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Lesson 1- Facts About Tobacco \nLesson 2: Facts About Quitting \nLesson 3: Deciding To Quit"
+        android:textColor="@color/cease_red"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.29"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDescript" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.492" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

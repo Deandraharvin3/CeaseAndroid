@@ -54,8 +54,9 @@
         android:layout_marginStart="200dp"
         android:layout_marginBottom="132dp"
         app:layout_constraintBottom_toTopOf="@+id/tvSignup"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:srcCompat="@drawable/next_btn" />
+        app:srcCompat="@drawable/rectangle2" />
 
     <TextView
         android:id="@+id/textView5"
