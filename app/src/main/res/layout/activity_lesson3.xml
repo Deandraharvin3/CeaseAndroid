@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cease_tan"
+    android:background="@drawable/cease_home"
+    android:backgroundTint="@color/cease_red"
+    android:backgroundTintMode="multiply"
     tools:context=".Lesson3">
 
     <TextView
