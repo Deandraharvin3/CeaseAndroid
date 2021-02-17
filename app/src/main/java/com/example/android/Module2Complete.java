@@ -28,13 +28,13 @@ public class Module2Complete extends AppCompatActivity {
 
             switch (value) {
                 case "lesson4":
-                    tvComplete.setText("Congratulations, you have completed Lesson 4!\n Click next to begin Lesson 5");
+                    tvComplete.setText("You have completed Lesson 4!\n Click next to begin Lesson 5");
                     break;
                 case "lesson5":
-                    tvComplete.setText("Congratulations, you have completed Lesson 5!\n Click next to begin Lesson 6");
+                    tvComplete.setText("You have completed Lesson 5!\n Click next to begin Lesson 6");
                     break;
                 default:
-                    tvComplete.setText("Congratulations, you have completed all of the Module 2 activities! This is a big accomplishment- pat yourself on the back!\n Click next to begin Module 3");
+                    tvComplete.setText("You have completed all of the Module 2 activities! This is a big accomplishment- pat yourself on the back!\n Click next to begin Module 3");
                     break;
             }
         }
@@ -50,7 +50,7 @@ public class Module2Complete extends AppCompatActivity {
                     Intent i = new Intent(Module2Complete.this, Lesson6.class);
                     startActivity(i);
                 } else {
-                    Intent i = new Intent(Module2Complete.this, Module1.class);
+                    Intent i = new Intent(Module2Complete.this, Module3.class);
                     startActivity(i);
                 }
             }

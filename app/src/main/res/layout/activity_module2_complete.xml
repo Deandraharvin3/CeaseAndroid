@@ -4,34 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cease_tan"
+    android:background="@drawable/mod2_back"
+    android:backgroundTint="@color/cease_purple"
+    android:backgroundTintMode="multiply"
     tools:context=".Module2Complete">
+
 
     <TextView
         android:id="@+id/tvComplete"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/archivo_black"
-        android:text="Congratulations, you have completed Lesson 4!"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/cease_red"
+        android:fontFamily="@font/montserrat_light"
+        android:text="You have completed Lesson 4!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/cease_tan"
         app:layout_constraintBottom_toTopOf="@+id/ivNextLesson"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintVertical_bias="0.026" />
 
     <ImageView
         android:id="@+id/ivNextLesson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/rectangle2" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="271dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Congratulations"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/cease_tan"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/next" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:textColor="@color/cease_red"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:text="Next Lesson"
+        app:layout_constraintBottom_toBottomOf="@+id/ivNextLesson"
+        app:layout_constraintEnd_toEndOf="@+id/ivNextLesson"
+        app:layout_constraintStart_toStartOf="@+id/ivNextLesson"
+        app:layout_constraintTop_toTopOf="@+id/ivNextLesson" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
