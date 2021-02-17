@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:text="Get Started"
         android:textColor="@color/cease_red"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/montserrat_alternates_bold"
         app:layout_constraintBottom_toBottomOf="@+id/btn3"
         app:layout_constraintEnd_toEndOf="@+id/btn3"
         app:layout_constraintStart_toStartOf="@+id/btn3"

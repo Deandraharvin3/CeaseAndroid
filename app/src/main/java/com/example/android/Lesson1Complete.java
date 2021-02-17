@@ -26,16 +26,16 @@ public class Lesson1Complete extends AppCompatActivity {
 
             switch (value) {
                 case "lesson1":
-                    tvComplete.setText("Congratulations, you have completed Lesson 1!\n Click next to begin Lesson 2");
+                    tvComplete.setText("You have completed Lesson 1!\nClick next to begin Lesson 2");
                     break;
                 case "lesson2":
-                    tvComplete.setText("Congratulations, you have completed Lesson 2!\n Click next to begin Lesson 3");
+                    tvComplete.setText("You have completed Lesson 2!\nClick next to begin Lesson 3");
                     break;
                 case "lesson3":
-                    tvComplete.setText("Congratulations, you have completed all of the lessons in Module 1!\n Click next to begin Activities");
+                    tvComplete.setText("You have completed all of the lessons in Module 1!\nClick next to begin Activities");
                     break;
                 default:
-                    tvComplete.setText("Congratulations, you have completed all of the Module 1 activities! This is a big accomplishment- pat yourself on the back!\n Click next to begin Module 2");
+                    tvComplete.setText("You have completed all of the Module 1 activities! This is a big accomplishment- pat yourself on the back!\nClick next to begin Module 2");
                     break;
             }
         }
