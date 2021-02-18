@@ -39,7 +39,7 @@ public class Module3Complete extends AppCompatActivity {
                     Intent i = new Intent(Module3Complete.this, Main3Activity.class);
                     startActivity(i);
                 }else {
-                    Intent i = new Intent(Module3Complete.this, Login.class);
+                    Intent i = new Intent(Module3Complete.this, Start.class);
                     startActivity(i);
                 }
             }

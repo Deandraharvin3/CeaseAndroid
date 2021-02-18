@@ -13,10 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Main3Activity"
-            android:label="@string/mod3_name"/>
-        <activity android:name=".Lesson7"
-            android:label="@string/mod3_name"/>
+        <activity android:name=".UserView"></activity>
+        <activity android:name=".Login" />
+        <activity
+            android:name=".Main3Activity"
+            android:label="@string/mod3_name" />
+        <activity
+            android:name=".Lesson7"
+            android:label="@string/mod3_name" />
         <activity
             android:name=".Module3Complete"
             android:label="@string/mod3_name" />
@@ -66,7 +70,7 @@
         <activity
             android:name=".Module1"
             android:label="@string/mod1_name" />
-        <activity android:name=".Login">
+        <activity android:name=".Start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
