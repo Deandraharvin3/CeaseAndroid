@@ -36,7 +36,7 @@ public class Start extends AppCompatActivity {
             public void onClick(View v) {
                 auth = FirebaseAuth.getInstance();
                     if (auth.getCurrentUser() != null) {
-                        Intent i = new Intent(Start.this, UserView.class);
+                        Intent i = new Intent(Start.this, Module3.class);
                         startActivity(i);
                         finish();
                     } else {

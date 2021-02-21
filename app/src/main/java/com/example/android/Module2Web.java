@@ -39,14 +39,19 @@ public class Module2Web extends AppCompatActivity {
             String lesson;
             @Override
             public void onClick(View v) {
-                if (results[2].equals("4")) {
-                    lesson = "lesson4";
-                } else if(results[2].equals("5")) {
-                    lesson = "lesson5";
-                }else if(results[2].equals("6")) {
-                    lesson = "lesson6";
-                }else {
-                    lesson = "end2";
+                switch (results[2]) {
+                    case "4":
+                        lesson = "lesson4";
+                        break;
+                    case "5":
+                        lesson = "lesson5";
+                        break;
+                    case "6":
+                        lesson = "lesson6";
+                        break;
+                    default:
+                        lesson = "end2";
+                        break;
                 }
 
                 Intent i = new Intent(Module2Web.this, Module2Complete.class);

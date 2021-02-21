@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_alternates_bold"
-        android:textColor="@color/cease_red"
+        android:textColor="@color/cease_purple"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:text="Next Lesson"
         app:layout_constraintBottom_toBottomOf="@+id/ivNextLesson"

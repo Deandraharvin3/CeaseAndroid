@@ -59,9 +59,6 @@ public class UserView extends AppCompatActivity {
                             }
                         }
                     });
-
-
-
         }
     }
 }

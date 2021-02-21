@@ -38,14 +38,19 @@ public class Lesson1Web extends AppCompatActivity {
             String lesson;
             @Override
             public void onClick(View v) {
-                if (results[2].equals("1")) {
-                    lesson = "lesson1";
-                } else if(results[2].equals("2")) {
-                    lesson = "lesson2";
-                }else if(results[2].equals("3")) {
-                    lesson = "lesson3";
-                }else {
-                    lesson = "end1";
+                switch (results[2]) {
+                    case "1":
+                        lesson = "lesson1";
+                        break;
+                    case "2":
+                        lesson = "lesson2";
+                        break;
+                    case "3":
+                        lesson = "lesson3";
+                        break;
+                    default:
+                        lesson = "end1";
+                        break;
                 }
 
                 Intent i = new Intent(Lesson1Web.this, Lesson1Complete.class);
