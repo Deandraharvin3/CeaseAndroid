@@ -35,19 +35,14 @@ public class Start extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 auth = FirebaseAuth.getInstance();
-                try {
                     if (auth.getCurrentUser() != null) {
                         Intent i = new Intent(Start.this, UserView.class);
                         startActivity(i);
                         finish();
+                    } else {
+                        Intent i = new Intent(Start.this, Login.class);
+                        startActivity(i);
                     }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Intent i = new Intent(Start.this, Login.class);
-                    startActivity(i);
-                }
-
-
             }
         });
     }
