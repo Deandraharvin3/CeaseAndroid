@@ -41,8 +41,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
+        android:fontFamily="@font/montserrat_alternates_bold"
         android:text="Signup"
-        android:visibility="invisible"
+        android:textColor="@color/cease_tan"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

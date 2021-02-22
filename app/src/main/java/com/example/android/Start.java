@@ -21,14 +21,14 @@ public class Start extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-//        tvSignup = (TextView) findViewById(R.id.tvSignup);
-//        tvSignup.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(Start.this, Module1.class);
-//                startActivity(i);
-//            }
-//        });
+        tvSignup = (TextView) findViewById(R.id.tvSignup);
+        tvSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Start.this, Signup.class);
+                startActivity(i);
+            }
+        });
 
         nextbtn = findViewById(R.id.nextbtn);
         nextbtn.setOnClickListener(new View.OnClickListener() {
