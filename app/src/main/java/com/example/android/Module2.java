@@ -20,9 +20,6 @@ public class Module2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_module2);
-
-        getActionBar().setBackgroundDrawable(new ColorDrawable(getResources()
-                .getColor(cease_purple)));
         mod2btn = findViewById(R.id.mod2btn);
         mod2btn.setOnClickListener(new View.OnClickListener() {
             @Override
