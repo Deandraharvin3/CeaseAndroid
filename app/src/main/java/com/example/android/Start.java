@@ -9,13 +9,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
 public class Start extends AppCompatActivity {
+
 
     ImageView nextbtn;
     TextView tvSignup;
 
     FirebaseAuth auth;
+    public User newUser = new User();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +42,9 @@ public class Start extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 auth = FirebaseAuth.getInstance();
-                    if (auth.getCurrentUser() != null) {
+
+                if (auth.getCurrentUser() != null) {
+
                         Intent i = new Intent(Start.this, Module1.class);
                         startActivity(i);
                         finish();

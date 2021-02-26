@@ -31,11 +31,12 @@ public class Module1 extends AppCompatActivity {
                     break;
                 case R.id.nav_path:
                     // do something here
-                    i = new Intent(Module1.this, Module3.class);
+                    i = new Intent(Module1.this, MyPath.class);
                     break;
                 case R.id.nav_lesson:
                     // do something here
-                    i = new Intent(Module1.this, Module2.class);
+                    i = new Intent(Module1.this, Module1.class);
+                    i.putExtra("lesson", "Mod1");
                     break;
                 default: i = new Intent(Module1.this,Module1.class);
                 break;

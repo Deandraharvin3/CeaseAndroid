@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Signup"></activity>
+        <activity android:name=".MyPath"></activity>
+        <activity android:name=".Signup" />
         <activity android:name=".UserView" />
         <activity android:name=".Login" />
         <activity
