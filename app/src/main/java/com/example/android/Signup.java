@@ -86,7 +86,7 @@ public class Signup extends AppCompatActivity {
                                     .set(data, SetOptions.merge());
 
 //                            updateUI(user);
-                            Intent i = new Intent(Signup.this, Module1.class);
+                            Intent i = new Intent(Signup.this, Survey.class);
                             startActivity(i);
 
                         } else {
