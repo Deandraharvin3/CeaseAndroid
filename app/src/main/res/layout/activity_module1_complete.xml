@@ -7,7 +7,7 @@
     android:background="@drawable/cease_home"
     android:backgroundTint="@color/cease_red"
     android:backgroundTintMode="multiply"
-    tools:context=".Lesson1Complete">
+    tools:context=".Module1Complete">
 
     <TextView
         android:id="@+id/textView5"

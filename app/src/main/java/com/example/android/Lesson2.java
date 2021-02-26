@@ -18,7 +18,7 @@ public class Lesson2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String[] urls = {"http://www.ceasewebsite.com/new%20activity%206.html", "http://www.ceasewebsite.com/congratsafterlesson2.html", "2"};
-                Intent i = new Intent(Lesson2.this, Lesson1Web.class);
+                Intent i = new Intent(Lesson2.this, Module1Web.class);
                 i.putExtra("key", urls);
                 startActivity(i);
             }

@@ -7,11 +7,10 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ImageView;
 
 
-public class Lesson1Web extends AppCompatActivity {
+public class Module1Web extends AppCompatActivity {
     private WebView myWebView;
     ImageView ivMod1;
     String[] results;
@@ -26,7 +25,7 @@ public class Lesson1Web extends AppCompatActivity {
             view1.setStartWeb(results[0]);
             view1.setEndWeb(results[1]);
         }
-        setContentView(R.layout.activity_lesson1_web);
+        setContentView(R.layout.activity_module1_web);
         myWebView = (WebView) findViewById(R.id.wvLesson2);
         ivMod1 = findViewById(R.id.ivLesson2);
         view1.showWeb(myWebView);
@@ -64,7 +63,7 @@ public class Lesson1Web extends AppCompatActivity {
                         break;
                 }
 
-                Intent i = new Intent(Lesson1Web.this, Lesson1Complete.class);
+                Intent i = new Intent(Module1Web.this, Module1Complete.class);
                 i.putExtra("key",lesson);
                 startActivity(i);
             }

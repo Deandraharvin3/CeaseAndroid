@@ -62,10 +62,10 @@
             android:banner="@color/cease_purple"
             android:label="@string/mod2_name" />
         <activity
-            android:name=".Lesson1Complete"
+            android:name=".Module1Complete"
             android:label="@string/mod1_name" />
         <activity
-            android:name=".Lesson1Web"
+            android:name=".Module1Web"
             android:label="@string/mod1_name" />
         <activity
             android:name=".Lesson1"

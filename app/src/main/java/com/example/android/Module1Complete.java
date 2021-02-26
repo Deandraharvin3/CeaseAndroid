@@ -8,14 +8,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Lesson1Complete extends AppCompatActivity {
+public class Module1Complete extends AppCompatActivity {
     ImageView ivMod2;
     TextView tvComplete;
     String value;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson1_complete);
+        setContentView(R.layout.activity_module1_complete);
 
         tvComplete = findViewById(R.id.textView5);
         ivMod2 = findViewById(R.id.ivMod2);
@@ -45,16 +45,16 @@ public class Lesson1Complete extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(value.equals("lesson1")) {
-                    Intent i = new Intent(Lesson1Complete.this, Lesson2.class);
+                    Intent i = new Intent(Module1Complete.this, Lesson2.class);
                     startActivity(i);
                 } else if(value.equals("lesson2")) {
-                    Intent i = new Intent(Lesson1Complete.this, Lesson3.class);
+                    Intent i = new Intent(Module1Complete.this, Lesson3.class);
                     startActivity(i);
                 } else if(value.equals("lesson3")) {
-                    Intent i = new Intent(Lesson1Complete.this, Main1Activity.class);
+                    Intent i = new Intent(Module1Complete.this, Main1Activity.class);
                     startActivity(i);
                 } else {
-                    Intent i = new Intent(Lesson1Complete.this, Module2.class);
+                    Intent i = new Intent(Module1Complete.this, Module2.class);
                     startActivity(i);
                 }
             }
