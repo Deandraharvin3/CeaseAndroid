@@ -29,14 +29,17 @@ public class Survey extends AppCompatActivity {
         surveyView.setEndWeb("http://www.ceasewebsite.com/module1.html");
         surveyView.showWeb(wvSurvey);
 
-//        wvSurvey.setOnTouchListener(new View.OnTouchListener() {
-//
-//            public boolean onTouch(View v, MotionEvent event) {
-//                WebView.HitTestResult hr = ((WebView)v).getHitTestResult();
-//                System.out.println("HR results: " + hr);
-//                return false;
-//            }
-//        });
+        wvSurvey.setOnTouchListener(new View.OnTouchListener() {
+
+            public boolean onTouch(View v, MotionEvent event) {
+                WebView.HitTestResult hr = ((WebView)v).getHitTestResult();
+                if(wvSurvey.getUrl().equals(surveyView.getEndWeb())) {
+                    ivStartMod.setVisibility(View.VISIBLE);
+                    return true;
+                }
+                return false;
+            }
+        });
 
         ivStartMod.setOnClickListener(new View.OnClickListener() {
             @Override

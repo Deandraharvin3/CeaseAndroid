@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageView;
@@ -30,9 +31,19 @@ public class Module3Web extends AppCompatActivity {
         wvMod3 = findViewById(R.id.wvMod3);
         view3.showWeb(wvMod3);
 
-        if (wvMod3.getUrl().equals(view3.getEndWeb())) {
-            ivLesson7.setVisibility(View.VISIBLE);
-        }
+//        todo ivLesson7.setVisibility(View.INVISIBLE);
+
+        wvMod3.setOnTouchListener(new View.OnTouchListener() {
+
+            public boolean onTouch(View v, MotionEvent event) {
+                WebView.HitTestResult hr = ((WebView)v).getHitTestResult();
+                if(wvMod3.getUrl().equals(view3.getEndWeb())) {
+                    ivLesson7.setVisibility(View.VISIBLE);
+                    return true;
+                }
+                return false;
+            }
+        });
 
         ivLesson7.setOnClickListener(new View.OnClickListener() {
             String lesson;

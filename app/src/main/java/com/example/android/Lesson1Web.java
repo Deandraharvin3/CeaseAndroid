@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -30,9 +31,19 @@ public class Lesson1Web extends AppCompatActivity {
         ivMod1 = findViewById(R.id.ivLesson2);
         view1.showWeb(myWebView);
 
-        if (myWebView.getUrl().equals(view1.getEndWeb())) {
-            ivMod1.setVisibility(View.VISIBLE);
-        }
+//       todo  ivMod1.setVisibility(View.INVISIBLE);
+
+        myWebView.setOnTouchListener(new View.OnTouchListener() {
+
+            public boolean onTouch(View v, MotionEvent event) {
+                WebView.HitTestResult hr = ((WebView)v).getHitTestResult();
+                if(myWebView.getUrl().equals(view1.getEndWeb())) {
+                    ivMod1.setVisibility(View.VISIBLE);
+                    return true;
+                }
+                return false;
+            }
+        });
 
         ivMod1.setOnClickListener(new View.OnClickListener() {
             String lesson;
