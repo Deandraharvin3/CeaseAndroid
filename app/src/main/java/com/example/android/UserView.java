@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -29,6 +30,8 @@ public class UserView extends AppCompatActivity {
 
     TextView tvName;
     Button btnLogout;
+    ProgressBar loading;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +40,7 @@ public class UserView extends AppCompatActivity {
 
         tvName = findViewById(R.id.tvName);
         btnLogout = findViewById(R.id.btnLogout);
+        loading = findViewById(R.id.loading);
 
 //        Showing username of current user
 //        todo show progression of user
@@ -45,9 +49,11 @@ public class UserView extends AppCompatActivity {
             query.get()
                     .addOnCompleteListener(user -> {
                         if (user.isSuccessful()) {
+
                             for (QueryDocumentSnapshot document : user.getResult()) {
                                 tvName.setText(document.get("username").toString());
                             }
+                            loading.setVisibility(View.INVISIBLE);
                         }
 
                         else{
@@ -100,7 +106,7 @@ public class UserView extends AppCompatActivity {
                     break;
             }
             startActivity(i);
-            return false;
+            return true;
         });
 
     }
