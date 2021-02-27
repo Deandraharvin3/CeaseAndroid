@@ -105,7 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_light"
-        android:text="Login"
+        android:text="Create"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/cease_red"
         app:layout_constraintBottom_toBottomOf="@+id/ivSignup"

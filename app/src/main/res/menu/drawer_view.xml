@@ -6,10 +6,10 @@
             android:id="@+id/nav_profile"
             android:icon="@drawable/user"
             android:title="Profile" />
-        <item
-            android:id="@+id/nav_path"
-            android:icon="@drawable/my_path"
-            android:title="My Path" />
+<!--        <item-->
+<!--            android:id="@+id/nav_path"-->
+<!--            android:icon="@drawable/my_path"-->
+<!--            android:title="My Path" />-->
         <item
             android:id="@+id/nav_lesson"
             android:icon="@drawable/lessons"

@@ -50,7 +50,7 @@ public class UserView extends AppCompatActivity {
                     if (user.isSuccessful()) {
 
                         for (QueryDocumentSnapshot document : user.getResult()) {
-                            tvName.setText(document.get("username").toString());
+                            tvName.setText("Welcome \n" + document.get("username").toString());
                         }
                         loading.setVisibility(View.INVISIBLE);
                     }
@@ -75,10 +75,10 @@ public class UserView extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.nav_profile:
                     break;
-                case R.id.nav_path:
-                    // do something here
-                    i = new Intent(UserView.this, MyPath.class);
-                    break;
+//                case R.id.nav_path:
+//                    // do something here
+//                    i = new Intent(UserView.this, MyPath.class);
+//                    break;
                 case R.id.nav_lesson:
                     // do something here
                     Bundle extras = getIntent().getExtras();
@@ -88,12 +88,21 @@ public class UserView extends AppCompatActivity {
                             case "Mod1":
                                 i = new Intent(UserView.this, Module1.class);
                                 break;
+//                            case "Mod1Complete":
+//                                i = new Intent(UserView.this, Module1Complete.class);
+//                                break;
                             case "Mod2":
                                 i = new Intent(UserView.this, Module2.class);
                                 break;
+//                            case "Mod2Complete":
+//                                i = new Intent(UserView.this, Module2Complete.class);
+//                                break;
                             case "Mod3":
                                 i = new Intent(UserView.this, Module3.class);
                                 break;
+//                            case "Mod3Complete":
+//                                i = new Intent(UserView.this, Module3Complete.class);
+//                                break;
                             default:
                                 i = new Intent(UserView.this, Module1.class);
                                 break;

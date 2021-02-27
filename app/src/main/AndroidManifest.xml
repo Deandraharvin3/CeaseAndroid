@@ -14,7 +14,6 @@
         android:theme="@style/Theme.Android"
         android:usesCleartextTraffic="true">
         <activity android:name=".Survey"></activity>
-        <activity android:name=".MyPath" />
         <activity android:name=".Signup" />
         <activity android:name=".UserView" />
         <activity android:name=".Login" />

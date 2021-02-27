@@ -29,10 +29,10 @@ public class Module1 extends AppCompatActivity {
                     // do something here
                     i = new Intent(Module1.this, UserView.class);
                     break;
-                case R.id.nav_path:
-                    // do something here
-                    i = new Intent(Module1.this, MyPath.class);
-                    break;
+//                case R.id.nav_path:
+//                    // do something here
+//                    i = new Intent(Module1.this, MyPath.class);
+//                    break;
                 case R.id.nav_lesson:
                     // do something here
                     i = new Intent(Module1.this, Module1.class);

@@ -18,7 +18,7 @@
         android:fontFamily="@font/archivo_black"
         android:text="Congratulations, you have completed all of the lessons in Module 3!"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/cease_blue"
+        android:textColor="@color/cease_tan"
         app:layout_constraintBottom_toTopOf="@+id/ivNextAct"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,12 +29,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/next" />
+        app:srcCompat="@drawable/rectangle2" />
 
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:textColor="@color/cease_blue"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:text="Next Lesson"
+        app:layout_constraintBottom_toBottomOf="@+id/ivNextAct"
+        app:layout_constraintEnd_toEndOf="@+id/ivNextAct"
+        app:layout_constraintStart_toStartOf="@+id/ivNextAct"
+        app:layout_constraintTop_toTopOf="@+id/ivNextAct" />
+
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/bottomNav"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:background="@color/cease_blue"-->
+<!--        app:itemTextColor="@color/cease_tan"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:menu="@menu/drawer_view" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

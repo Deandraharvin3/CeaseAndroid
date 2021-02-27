@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -20,21 +21,26 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
+import com.google.firebase.functions.FirebaseFunctions;
+import com.google.firebase.functions.HttpsCallableResult;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Signup extends AppCompatActivity {
 
     private static final String TAG = "EmailPassword";
+    private FirebaseFunctions mFunctions;
 
     // [START declare_auth]
     public FirebaseAuth mAuth;
     // [END declare_auth]
 
-    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+//    final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     EditText tvUsername, tvCode, tvEmail, pwd, pwd2;
     ImageView ivSignup;
@@ -43,7 +49,7 @@ public class Signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        DatabaseReference myRef = database.getReference("codes/codelist").push();
+//        DatabaseReference myRef = database.getReference("codes").push();
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -53,6 +59,8 @@ public class Signup extends AppCompatActivity {
         pwd = findViewById(R.id.pwd);
         pwd2 = findViewById(R.id.pwd2);
         ivSignup = findViewById(R.id.ivSignup);
+        mFunctions = FirebaseFunctions.getInstance();
+
 
         ivSignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +69,8 @@ public class Signup extends AppCompatActivity {
                 System.out.println("Password value: " + pwd.getText() + pwd2.getText());
                 if(pwd.getText().toString().equals(pwd2.getText().toString())){
                     String password = pwd.getText().toString();
-                    myRef.setValue(tvCode.getText().toString());
+//                    myRef.setValue(tvCode.getText().toString());
+                    validCode();
                     createUser(email, password);
                 } else {
                     Toast.makeText(Signup.this, "Passwords do not Match!", Toast.LENGTH_SHORT).show();
@@ -69,6 +78,26 @@ public class Signup extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    private void validCode() {
+        Map<String, Object> verifyCode = new HashMap<>();
+        verifyCode.put("codes", tvCode.getText().toString());
+        System.out.println( verifyCode.get("codes"));
+
+        mFunctions.getHttpsCallable("verifyUnusedCode").call(verifyCode)
+            .continueWith(new Continuation<HttpsCallableResult, String>() {
+                @Override
+                public String then(@NonNull Task<HttpsCallableResult> task) throws Exception {
+                    // This continuation runs on either success or failure, but if the task
+                    // has failed then getResult() will throw an Exception which will be
+                    // propagated down.
+                    String result = (String) Objects.requireNonNull(task.getResult()).getData();
+                    System.out.println("result: "  + result);
+                    return result;
+                }
+            });
 
     }
 

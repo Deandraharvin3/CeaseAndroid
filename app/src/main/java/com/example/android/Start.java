@@ -45,6 +45,7 @@ public class Start extends AppCompatActivity {
 
                 if (auth.getCurrentUser() != null) {
 
+//                    todo figure out where the user left off based on firestore data
                         Intent i = new Intent(Start.this, Module1.class);
                         startActivity(i);
                         finish();
