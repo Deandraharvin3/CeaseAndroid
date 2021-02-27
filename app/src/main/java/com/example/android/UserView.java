@@ -44,23 +44,21 @@ public class UserView extends AppCompatActivity {
 
 //        Showing username of current user
 //        todo show progression of user
-        if(query != null){
 
-            query.get()
-                    .addOnCompleteListener(user -> {
-                        if (user.isSuccessful()) {
+        query.get()
+                .addOnCompleteListener(user -> {
+                    if (user.isSuccessful()) {
 
-                            for (QueryDocumentSnapshot document : user.getResult()) {
-                                tvName.setText(document.get("username").toString());
-                            }
-                            loading.setVisibility(View.INVISIBLE);
+                        for (QueryDocumentSnapshot document : user.getResult()) {
+                            tvName.setText(document.get("username").toString());
                         }
+                        loading.setVisibility(View.INVISIBLE);
+                    }
 
-                        else{
-                                System.out.println("\"Error getting documents ");
-                            }
-                    });
-        }
+                    else{
+                            System.out.println("\"Error getting documents ");
+                        }
+                });
 
 
         btnLogout.setOnClickListener(new View.OnClickListener() {

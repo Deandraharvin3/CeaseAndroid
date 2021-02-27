@@ -39,6 +39,7 @@ dependencies {
     implementation "androidx.transition:transition:1.1.0"
     implementation "androidx.annotation:annotation:1.1.0"
     implementation 'com.google.firebase:firebase-functions'
+    implementation 'com.google.firebase:firebase-database:10.2.1'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.google.firebase:firebase-analytics'
     // Import the BoM for the Firebase platform

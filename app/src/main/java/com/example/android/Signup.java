@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
@@ -32,12 +34,16 @@ public class Signup extends AppCompatActivity {
     public FirebaseAuth mAuth;
     // [END declare_auth]
 
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
     EditText tvUsername, tvCode, tvEmail, pwd, pwd2;
     ImageView ivSignup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        DatabaseReference myRef = database.getReference("codes/codelist").push();
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -52,8 +58,15 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String email = tvEmail.getText().toString();
-                String password = pwd.getText().toString();
-                createUser(email, password);
+                System.out.println("Password value: " + pwd.getText() + pwd2.getText());
+                if(pwd.getText().toString().equals(pwd2.getText().toString())){
+                    String password = pwd.getText().toString();
+                    myRef.setValue(tvCode.getText().toString());
+                    createUser(email, password);
+                } else {
+                    Toast.makeText(Signup.this, "Passwords do not Match!", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 

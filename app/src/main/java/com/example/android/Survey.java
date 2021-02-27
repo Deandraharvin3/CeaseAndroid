@@ -23,7 +23,7 @@ public class Survey extends AppCompatActivity {
 
         wvSurvey = findViewById(R.id.wvSurvey);
         ivStartMod = findViewById(R.id.ivStartMod);
-        ivStartMod.setVisibility(View.INVISIBLE);
+//        ivStartMod.setVisibility(View.INVISIBLE);
 
         surveyView.setStartWeb("http://www.ceasewebsite.com/readinesssurvey.html");
         surveyView.setEndWeb("http://www.ceasewebsite.com/module1.html");

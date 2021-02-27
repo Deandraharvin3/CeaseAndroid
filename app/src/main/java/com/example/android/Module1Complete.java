@@ -8,14 +8,34 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class Module1Complete extends AppCompatActivity {
     ImageView ivMod2;
     TextView tvComplete;
     String value;
+
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    CollectionReference users = db.collection("users");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_module1_complete);
+
+//        Query query = users.whereEqualTo("email",user.getEmail());
+        System.out.println(user.getUid());
 
         tvComplete = findViewById(R.id.textView5);
         ivMod2 = findViewById(R.id.ivMod2);
@@ -35,6 +55,10 @@ public class Module1Complete extends AppCompatActivity {
                     tvComplete.setText("You have completed all of the lessons in Module 1!\nClick next to begin Activities");
                     break;
                 default:
+                    Map<String, Object> data = new HashMap<>();
+                    data.put("passed", true);
+// todo test
+                    users.getFirestore().document(user.getUid()+"/badges".codePointAt(0)).update(data);
                     tvComplete.setText("You have completed all of the Module 1 activities! This is a big accomplishment- pat yourself on the back!\nClick next to begin Module 2");
                     break;
             }
