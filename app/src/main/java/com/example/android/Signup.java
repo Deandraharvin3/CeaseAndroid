@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.Continuation;
@@ -45,6 +46,8 @@ public class Signup extends AppCompatActivity {
 
     EditText tvUsername, tvCode, tvEmail, pwd, pwd2;
     ImageView ivSignup;
+    ProgressBar pbLoading;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,8 +63,8 @@ public class Signup extends AppCompatActivity {
         pwd = findViewById(R.id.pwd);
         pwd2 = findViewById(R.id.pwd2);
         ivSignup = findViewById(R.id.ivSignup);
+        pbLoading = findViewById(R.id.pbLoading);
         mFunctions = FirebaseFunctions.getInstance();
-
 
         ivSignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,45 +72,48 @@ public class Signup extends AppCompatActivity {
                 String email = tvEmail.getText().toString();
                 if(pwd.getText().toString().equals(pwd2.getText().toString())){
                     String password = pwd.getText().toString();
-
-                    validCode().addOnSuccessListener(new OnSuccessListener<String>() {
+                    pbLoading.setVisibility(View.VISIBLE);
+                    invalidUsername().addOnSuccessListener(new OnSuccessListener<String>() {
                         @Override
                         public void onSuccess(String s) {
-                            if(s.equals("false")) {
-                                createUser(email, password);
-                            }
-                            else {
-                                Toast.makeText(Signup.this, "Code is INVALID", Toast.LENGTH_SHORT).show();
+                            if(s.equals("true")) {
+                                Toast.makeText(Signup.this, "Username already Used", Toast.LENGTH_SHORT).show();
+                                pbLoading.setVisibility(View.INVISIBLE);
+                            } else {
+                                validCode().addOnSuccessListener(new OnSuccessListener<String>() {
+                                    @Override
+                                    public void onSuccess(String s) {
+                                        if(s.equals("true")) {
+                                            createUser(email, password);
+                                        }
+                                        else {
+                                            Toast.makeText(Signup.this, "Code is INVALID", Toast.LENGTH_SHORT).show();
+                                            pbLoading.setVisibility(View.INVISIBLE);
+                                        }
+                                    }
+                                });
                             }
                         }
                     });
 
                 } else {
                     Toast.makeText(Signup.this, "Passwords do not Match!", Toast.LENGTH_SHORT).show();
+                    pbLoading.setVisibility(View.INVISIBLE);
                 }
 
             }
         });
-
-    }
-
-    private Task<String> validCode() {
-        Map<String, Object> verifyCode = new HashMap<>();
-        verifyCode.put("codes", tvCode.getText().toString());
-        System.out.println( verifyCode.get("codes"));
-
-        return mFunctions.getHttpsCallable("verifyUnusedCode").call(verifyCode)
-            .continueWith(task -> (Boolean) Objects.requireNonNull(task.getResult()).getData() ? "true": "false");
-
     }
 
     private void createUser(String newEmail, String newPassword) {
         if (TextUtils.isEmpty(newEmail)) {
             Toast.makeText(getApplicationContext(), "Please enter email...", Toast.LENGTH_LONG).show();
+            pbLoading.setVisibility(View.INVISIBLE);
             return;
         }
         if (TextUtils.isEmpty(newPassword)) {
             Toast.makeText(getApplicationContext(), "Please enter password!", Toast.LENGTH_LONG).show();
+            pbLoading.setVisibility(View.INVISIBLE);
             return;
         }
         mAuth.createUserWithEmailAndPassword(newEmail, newPassword)
@@ -128,7 +134,6 @@ public class Signup extends AppCompatActivity {
                             db.collection("users").document(user.getUid())
                                     .set(data, SetOptions.merge());
 
-//                            updateUI(user);
                             Intent i = new Intent(Signup.this, Survey.class);
                             startActivity(i);
 
@@ -137,9 +142,29 @@ public class Signup extends AppCompatActivity {
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(Signup.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+                            pbLoading.setVisibility(View.INVISIBLE);
                         }
                     }
                 });
+
+    }
+    private Task<String> validCode() {
+        Map<String, Object> verifyCode = new HashMap<>();
+        verifyCode.put("codes", tvCode.getText().toString());
+        verifyCode.put("code", tvCode.getText().toString());
+        System.out.println(verifyCode.get("codes"));
+
+        return mFunctions.getHttpsCallable("verifyUnusedCode").call(verifyCode)
+                .continueWith(task -> (Boolean) Objects.requireNonNull(task.getResult()).getData() ? "true": "false");
+
     }
 
+    private Task<String> invalidUsername() {
+        Map<String, Object> verifyUsername = new HashMap<>();
+        verifyUsername.put("username", tvUsername.getText().toString());
+        System.out.println(verifyUsername.get("users"));
+
+        return mFunctions.getHttpsCallable("usernameExists").call(verifyUsername)
+                .continueWith(task -> (Boolean) Objects.requireNonNull(task.getResult()).getData() ? "true": "false");
+    }
 }
