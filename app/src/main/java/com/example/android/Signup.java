@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -66,12 +67,21 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String email = tvEmail.getText().toString();
-                System.out.println("Password value: " + pwd.getText() + pwd2.getText());
                 if(pwd.getText().toString().equals(pwd2.getText().toString())){
                     String password = pwd.getText().toString();
-//                    myRef.setValue(tvCode.getText().toString());
-                    validCode();
-                    createUser(email, password);
+
+                    validCode().addOnSuccessListener(new OnSuccessListener<String>() {
+                        @Override
+                        public void onSuccess(String s) {
+                            if(s.equals("false")) {
+                                createUser(email, password);
+                            }
+                            else {
+                                Toast.makeText(Signup.this, "Code is INVALID", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
                 } else {
                     Toast.makeText(Signup.this, "Passwords do not Match!", Toast.LENGTH_SHORT).show();
                 }
@@ -81,23 +91,13 @@ public class Signup extends AppCompatActivity {
 
     }
 
-    private void validCode() {
+    private Task<String> validCode() {
         Map<String, Object> verifyCode = new HashMap<>();
         verifyCode.put("codes", tvCode.getText().toString());
         System.out.println( verifyCode.get("codes"));
 
-        mFunctions.getHttpsCallable("verifyUnusedCode").call(verifyCode)
-            .continueWith(new Continuation<HttpsCallableResult, String>() {
-                @Override
-                public String then(@NonNull Task<HttpsCallableResult> task) throws Exception {
-                    // This continuation runs on either success or failure, but if the task
-                    // has failed then getResult() will throw an Exception which will be
-                    // propagated down.
-                    String result = (String) Objects.requireNonNull(task.getResult()).getData();
-                    System.out.println("result: "  + result);
-                    return result;
-                }
-            });
+        return mFunctions.getHttpsCallable("verifyUnusedCode").call(verifyCode)
+            .continueWith(task -> (Boolean) Objects.requireNonNull(task.getResult()).getData() ? "true": "false");
 
     }
 
@@ -124,6 +124,7 @@ public class Signup extends AppCompatActivity {
                             data.put("username", tvUsername.getText().toString());
                             data.put("code", tvCode.getText().toString());
 
+                            assert user != null;
                             db.collection("users").document(user.getUid())
                                     .set(data, SetOptions.merge());
 
