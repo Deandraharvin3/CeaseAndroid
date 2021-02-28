@@ -58,7 +58,6 @@
             android:label="@string/mod1_name" />
         <activity
             android:name=".Module2"
-            android:banner="@color/cease_purple"
             android:label="@string/mod2_name" />
         <activity
             android:name=".Module1Complete"
