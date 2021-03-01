@@ -1,57 +1,51 @@
 package com.example.android;
 
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.Map;
 
 public class User {
 
 
-    private String username ;
-    private String  userCode;
-    private String userEmail;
-    private String tempUsn;
-    public String getUsername() {
-        return username;
-    }
-    public String getUserEmail() {
-        return userEmail;
-    }
+    private Boolean success;
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//    CollectionReference users = db.collection("modules");
+//    DocumentReference users = db.document("modules/"+user.getUid());
 
-
-    public String getUserCode() {
-        return userCode;
-    }
-
-    public void setUserCode(String userCode) {
-        this.userCode = userCode;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    DocumentReference completed = db.collection("modules").document(user.getUid());
 
    public User(){
-
-
    }
 
+   public Task<DocumentSnapshot> getCompleted(String mod, String less) {
 
-     String getUsnFirebase() {
+       return completed.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+           @Override
+           public void onSuccess(DocumentSnapshot documentSnapshot) {
 
-        return tempUsn != null?  tempUsn : "something went wrong";
-    }
+               Map<String, Object> complete = documentSnapshot.getData();
+               for (Map.Entry<String, Object> entry : complete.entrySet()) {
+                   if (entry.getKey().equals(mod)) {
+                       Map<String, Object> lesson = (Map<String, Object>) entry.getValue();
+                       for (Map.Entry<String, Object> e : lesson.entrySet()) {
+                           if (e.getKey().equals(less)) {
+                               Map<String, Object> fNameMap = (Map<String, Object>) e.getValue();
+
+                           }
+                       }
+                   }
+               }
+//                System.out.println("Mod 1: "+ mod1 + "\nCompleted: "+complete);
+           }
+       });
+   }
     
 }
