@@ -43,19 +43,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/ivMaterials"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPath"
         app:srcCompat="@drawable/chats_icon" />
 
     <ImageView
         android:id="@+id/ivLesson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="60dp"
-        android:layout_marginBottom="41dp"
-        app:layout_constraintBottom_toTopOf="@+id/ivNotification"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUser"
         app:srcCompat="@drawable/lessons" />
 
     <ImageView
@@ -63,9 +63,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginBottom="34dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNav"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivMessage"
+        app:layout_constraintVertical_bias="0.212"
         app:srcCompat="@drawable/materials_icon" />
 
     <ImageView
@@ -73,29 +76,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/ivMessage"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUser"
         app:srcCompat="@drawable/my_path" />
 
     <ImageView
         android:id="@+id/ivNotification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/ivProfile"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="52dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivLesson"
         app:srcCompat="@drawable/my_path_icon" />
 
     <ImageView
         android:id="@+id/ivProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="60dp"
-        android:layout_marginBottom="34dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivNotification"
+        app:layout_constraintVertical_bias="0.238"
         app:srcCompat="@drawable/user_icon" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

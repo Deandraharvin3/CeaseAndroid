@@ -9,8 +9,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import java.util.Objects;
 
 public class Dashboard extends AppCompatActivity {
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    CollectionReference users = db.collection("users");
 
     Intent i;
     @Override
@@ -24,6 +36,22 @@ public class Dashboard extends AppCompatActivity {
         ImageView ivNotification = (ImageView) findViewById(R.id.ivNotification);
         ImageView ivProfile = (ImageView) findViewById(R.id.ivProfile);
         TextView tvUser = (TextView) findViewById(R.id.tvUser);
+
+        Query query = users.whereEqualTo("email",user.getEmail());
+
+        query.get()
+                .addOnCompleteListener(user -> {
+                    if (user.isSuccessful()) {
+
+                        for (QueryDocumentSnapshot document : Objects.requireNonNull(user.getResult())) {
+                            tvUser.setText(Objects.requireNonNull(document.get("username")).toString());
+                        }
+                    }
+
+                    else{
+                        System.out.println("\"Error getting documents ");
+                    }
+                });
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {

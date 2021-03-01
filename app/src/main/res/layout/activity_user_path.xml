@@ -4,6 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/cease_home"
+    android:backgroundTint="@color/cease_red"
+    android:backgroundTintMode="multiply"
     tools:context=".UserPath">
 
+    <ImageView
+        android:id="@+id/ivBadges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/ivCerts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/skinny_tab_icon" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_extra_bold"
+        android:text="Badges"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/cease_red"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBadges"
+        app:layout_constraintEnd_toEndOf="@+id/ivBadges"
+        app:layout_constraintStart_toStartOf="@+id/ivBadges"
+        app:layout_constraintTop_toTopOf="@+id/ivBadges" />
+
+    <ImageView
+        android:id="@+id/ivCerts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="140dp"
+        app:layout_constraintBottom_toTopOf="@+id/ivBackPath"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/skinny_tab_icon" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_extra_bold"
+        android:text="Certificates"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/cease_red"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCerts"
+        app:layout_constraintEnd_toEndOf="@+id/ivCerts"
+        app:layout_constraintStart_toStartOf="@+id/ivCerts"
+        app:layout_constraintTop_toTopOf="@+id/ivCerts" />
+
+    <ImageView
+        android:id="@+id/ivQuit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/ivBadges"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/skinny_tab_icon" />
+
+    <ImageView
+        android:id="@+id/ivBackPath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/back_icon" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/montserrat_extra_bold"
+        android:text="My Path"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/cease_tan"
+        app:layout_constraintBottom_toTopOf="@+id/ivQuit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.252" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_extra_bold"
+        android:text="My Quit Path"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/cease_red"
+        app:layout_constraintBottom_toBottomOf="@+id/ivQuit"
+        app:layout_constraintEnd_toEndOf="@+id/ivQuit"
+        app:layout_constraintStart_toStartOf="@+id/ivQuit"
+        app:layout_constraintTop_toTopOf="@+id/ivQuit" />
 </androidx.constraintlayout.widget.ConstraintLayout>
