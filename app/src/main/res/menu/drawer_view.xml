@@ -2,17 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_profile"
-            android:icon="@drawable/user"
-            android:title="Profile" />
+
 <!--        <item-->
 <!--            android:id="@+id/nav_path"-->
 <!--            android:icon="@drawable/my_path"-->
 <!--            android:title="My Path" />-->
         <item
-            android:id="@+id/nav_lesson"
-            android:icon="@drawable/lessons"
-            android:title="Lesson" />
+            android:id="@+id/nav_main"
+            android:title="Main" />
+<!--            android:icon="@drawable/lessons"-->
+
+        <item
+        android:id="@+id/nav_dash"
+            android:title="Dashboard" />
+<!--        android:icon="@drawable/user"-->
+
     </group>
 </menu>

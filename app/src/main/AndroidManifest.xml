@@ -13,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Survey"></activity>
+        <activity android:name=".UserPath"></activity>
+        <activity android:name=".Lessons" />
+        <activity android:name=".Dashboard" />
+        <activity android:name=".Survey" />
         <activity android:name=".Signup" />
         <activity android:name=".UserView" />
         <activity android:name=".Login" />

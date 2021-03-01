@@ -1,13 +1,9 @@
 package com.example.android;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -25,15 +21,15 @@ public class Module1 extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
-                case R.id.nav_profile:
+                case R.id.nav_dash:
                     // do something here
-                    i = new Intent(Module1.this, UserView.class);
+                    i = new Intent(Module1.this, Dashboard.class);
                     break;
 //                case R.id.nav_path:
 //                    // do something here
 //                    i = new Intent(Module1.this, MyPath.class);
 //                    break;
-                case R.id.nav_lesson:
+                case R.id.nav_main:
                     // do something here
                     i = new Intent(Module1.this, Module1.class);
 
