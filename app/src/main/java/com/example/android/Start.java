@@ -21,7 +21,6 @@ public class Start extends AppCompatActivity {
     TextView tvSignup;
 
     FirebaseAuth auth;
-    public User newUser = new User();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
