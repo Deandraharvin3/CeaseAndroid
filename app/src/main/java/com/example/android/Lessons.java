@@ -71,7 +71,7 @@ public class Lessons extends AppCompatActivity {
                                         if (dataEntry.getValue().equals(true)) {
                                             tvM1L1.setTextColor(getResources().getColor(R.color.cease_tan));
                                             tvM1L1.setOnClickListener(v -> {
-                                                i = new Intent(Lessons.this, Lesson1.class);
+                                                i = new Intent(Lessons.this, Lesson2.class);
                                                 startActivity(i);
                                             });
                                         }
@@ -88,7 +88,7 @@ public class Lessons extends AppCompatActivity {
                                             tvL2.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
-                                                    i = new Intent(Lessons.this, Lesson2.class);
+                                                    i = new Intent(Lessons.this, Lesson3.class);
                                                     startActivity(i);
                                                 }
                                             });
@@ -107,7 +107,7 @@ public class Lessons extends AppCompatActivity {
                                             tvL3.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
-                                                    i = new Intent(Lessons.this, Lesson3.class);
+                                                    i = new Intent(Lessons.this, Main1Activity.class);
                                                     startActivity(i);
                                                 }
                                             });
@@ -133,7 +133,7 @@ public class Lessons extends AppCompatActivity {
                                             tvM2L4.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
-                                                    i = new Intent(Lessons.this, Lesson4.class);
+                                                    i = new Intent(Lessons.this, Lesson5.class);
                                                     startActivity(i);
                                                 }
                                             });
@@ -152,7 +152,7 @@ public class Lessons extends AppCompatActivity {
                                             tvL5.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
-                                                    i = new Intent(Lessons.this, Lesson5.class);
+                                                    i = new Intent(Lessons.this, Lesson6.class);
                                                     startActivity(i);
                                                 }
                                             });
@@ -171,7 +171,7 @@ public class Lessons extends AppCompatActivity {
                                             tvL6.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
-                                                    i = new Intent(Lessons.this, Lesson6.class);
+                                                    i = new Intent(Lessons.this, Module3.class);
                                                     startActivity(i);
                                                 }
                                             });
@@ -196,7 +196,7 @@ public class Lessons extends AppCompatActivity {
                                         tvM3L7.setOnClickListener(new View.OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
-                                                Intent i = new Intent(Lessons.this, Lesson7.class);
+                                                Intent i = new Intent(Lessons.this, Main3Activity.class);
                                                 startActivity(i);
                                             }
                                         });

@@ -123,7 +123,7 @@ public class Dashboard extends AppCompatActivity {
                         }
                     }
                 } else if (entry.getKey().equals("module_2")) {
-                    tvModule.setText(R.string.mod2_name);
+//                    tvModule.setText(R..mod2_name);
                     Map<String, Object> lesson = (Map<String, Object>) entry.getValue();
                     for (Map.Entry<String, Object> e : lesson.entrySet()) {
                         if(lesson.get("completed").equals(true)){
@@ -180,7 +180,7 @@ public class Dashboard extends AppCompatActivity {
                     for (Map.Entry<String, Object> e : lesson.entrySet()) {
                         if(lesson.get("completed").equals(true)){
                             progressBar.setProgressPercentage(100, true);
-                            tvModule.setText("Avtivity 2");
+//                            tvModule.setText("Avtivity 2");
                         }
                         if ("lesson_7".equals(e.getKey())) {
                             Map<String, Object> fNameMap = (Map<String, Object>) e.getValue();
