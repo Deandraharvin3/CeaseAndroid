@@ -9,6 +9,7 @@
     android:backgroundTintMode="multiply"
     tools:context=".Dashboard">
 
+
     <TextView
         android:id="@+id/textView15"
         android:layout_width="0dp"
@@ -43,6 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivPath"
@@ -52,10 +54,10 @@
         android:id="@+id/ivLesson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="60dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUser"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
         app:srcCompat="@drawable/lessons" />
 
     <ImageView
@@ -63,6 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNav"
@@ -76,9 +79,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="49dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUser"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
         app:srcCompat="@drawable/my_path" />
 
     <ImageView
@@ -87,6 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivLesson"
         app:srcCompat="@drawable/my_path_icon" />
@@ -97,12 +101,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivNotification"
         app:layout_constraintVertical_bias="0.238"
         app:srcCompat="@drawable/user_icon" />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
@@ -115,5 +121,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/drawer_view" />
+
+    <com.mackhartley.roundedprogressbar.RoundedProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUser"
+        app:rpbProgressBgColor="@color/cease_tan"
+        app:rpbProgressColor="@color/progressbarGreen" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

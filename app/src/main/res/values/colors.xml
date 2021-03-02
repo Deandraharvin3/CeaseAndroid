@@ -13,5 +13,6 @@
     <color name="cease_tan">#feefd9</color>
     <color name="cease_mustard">#faaf1a</color>
     <color name="gray">#777474</color>
+    <color name ="progressbarGreen">#228c22</color>
 
 </resources>

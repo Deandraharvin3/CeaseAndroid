@@ -53,160 +53,42 @@ public class Lessons extends AppCompatActivity {
 
         ivBackLesson = findViewById(R.id.ivBackLesson);
 
-        ivBackLesson.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        ivBackLesson.setOnClickListener(v -> finish());
 
 
 //        Keeping track od which modules are completed
-        completed.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Map<String, Object> complete = documentSnapshot.getData();
-                for (Map.Entry<String, Object> entry : complete.entrySet()) {
-                    if (entry.getKey().equals("module_1")) {
-                        Map<String, Object> lesson = (Map<String, Object>) entry.getValue();
-                        for (Map.Entry<String, Object> e : lesson.entrySet()) {
-                            switch (e.getKey()) {
-                                case "lesson_1": {
-                                    Map<String, Object> fNameMap = (Map<String, Object>) e.getValue();
-                                    for (Map.Entry<String, Object> dataEntry : fNameMap.entrySet()) {
-                                        if (dataEntry.getKey().equals("completed")) {
-                                            if (dataEntry.getValue().equals(true)) {
-                                                tvM1L1.setTextColor(getResources().getColor(R.color.cease_tan));
-                                                tvM1L1.setOnClickListener(new View.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(View v) {
-                                                        i = new Intent(Lessons.this, Lesson1.class);
-                                                        startActivity(i);
-                                                    }
-                                                });
-                                            }
-                                        }
-                                    }
-                                    break;
-                                }
-                                case "lesson_2": {
-                                    Map<String, Object> fNameMap = (Map<String, Object>) e.getValue();
-                                    for (Map.Entry<String, Object> dataEntry : fNameMap.entrySet()) {
-                                        if (dataEntry.getKey().equals("completed")) {
-                                            if (dataEntry.getValue().equals(true)) {
-                                                tvL2.setTextColor(getResources().getColor(R.color.cease_tan));
-                                                tvL2.setOnClickListener(new View.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(View v) {
-                                                        i = new Intent(Lessons.this, Lesson2.class);
-                                                        startActivity(i);
-                                                    }
-                                                });
-
-                                            }
-                                        }
-                                    }
-                                    break;
-                                }
-                                case "lesson_3": {
-                                    Map<String, Object> fNameMap = (Map<String, Object>) e.getValue();
-                                    for (Map.Entry<String, Object> dataEntry : fNameMap.entrySet()) {
-                                        if (dataEntry.getKey().equals("completed")) {
-                                            if (dataEntry.getValue().equals(true)) {
-                                                tvL3.setTextColor(getResources().getColor(R.color.cease_tan));
-                                                tvL3.setOnClickListener(new View.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(View v) {
-                                                        i = new Intent(Lessons.this, Lesson3.class);
-                                                        startActivity(i);
-                                                    }
-                                                });
-
-                                            }
-                                        }
-                                    }
-                                    break;
-                                }
-                            }
-
-                        }
-                    } else if(entry.getKey().equals("module_2")) {
-                        Map<String, Object> lesson = (Map<String, Object>) entry.getValue();
-                        for (Map.Entry<String, Object> e : lesson.entrySet()) {
-                            switch (e.getKey()) {
-                                case "lesson_4": {
-                                    Map<String, Object> fNameMap = (Map<String, Object>) e.getValue();
-                                    for (Map.Entry<String, Object> dataEntry : fNameMap.entrySet()) {
-                                        if (dataEntry.getKey().equals("completed")) {
-                                            if (dataEntry.getValue().equals(true)) {
-                                                tvM2L4.setTextColor(getResources().getColor(R.color.cease_tan));
-                                                tvM2L4.setOnClickListener(new View.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(View v) {
-                                                        i = new Intent(Lessons.this, Lesson4.class);
-                                                        startActivity(i);
-                                                    }
-                                                });
-
-                                            }
-                                        }
-                                    }
-                                    break;
-                                }
-                                case "lesson_5": {
-                                    Map<String, Object> fNameMap = (Map<String, Object>) e.getValue();
-                                    for (Map.Entry<String, Object> dataEntry : fNameMap.entrySet()) {
-                                        if (dataEntry.getKey().equals("completed")) {
-                                            if (dataEntry.getValue().equals(true)) {
-                                                tvL5.setTextColor(getResources().getColor(R.color.cease_tan));
-                                                tvL5.setOnClickListener(new View.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(View v) {
-                                                        i = new Intent(Lessons.this, Lesson5.class);
-                                                        startActivity(i);
-                                                    }
-                                                });
-
-                                            }
-                                        }
-                                    }
-                                    break;
-                                }
-                                case "lesson_6": {
-                                    Map<String, Object> fNameMap = (Map<String, Object>) e.getValue();
-                                    for (Map.Entry<String, Object> dataEntry : fNameMap.entrySet()) {
-                                        if (dataEntry.getKey().equals("completed")) {
-                                            if (dataEntry.getValue().equals(true)) {
-                                                tvL6.setTextColor(getResources().getColor(R.color.cease_tan));
-                                                tvL6.setOnClickListener(new View.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(View v) {
-                                                        i = new Intent(Lessons.this, Lesson6.class);
-                                                        startActivity(i);
-                                                    }
-                                                });
-
-                                            }
-                                        }
-                                    }
-                                    break;
-                                }
-                            }
-
-                        }
-                    } else {
-                        Map<String, Object> lesson = (Map<String, Object>) entry.getValue();
-                        for (Map.Entry<String, Object> e : lesson.entrySet()) {
-                            if ("lesson_7".equals(e.getKey())) {
+        completed.get().addOnSuccessListener(documentSnapshot -> {
+            Map<String, Object> complete = documentSnapshot.getData();
+            for (Map.Entry<String, Object> entry : complete.entrySet()) {
+                if (entry.getKey().equals("module_1")) {
+                    Map<String, Object> lesson = (Map<String, Object>) entry.getValue();
+                    for (Map.Entry<String, Object> e : lesson.entrySet()) {
+                        switch (e.getKey()) {
+                            case "lesson_1": {
                                 Map<String, Object> fNameMap = (Map<String, Object>) e.getValue();
                                 for (Map.Entry<String, Object> dataEntry : fNameMap.entrySet()) {
                                     if (dataEntry.getKey().equals("completed")) {
                                         if (dataEntry.getValue().equals(true)) {
-                                            tvM3L7.setTextColor(getResources().getColor(R.color.cease_tan));
-                                            tvM3L7.setOnClickListener(new View.OnClickListener() {
+                                            tvM1L1.setTextColor(getResources().getColor(R.color.cease_tan));
+                                            tvM1L1.setOnClickListener(v -> {
+                                                i = new Intent(Lessons.this, Lesson1.class);
+                                                startActivity(i);
+                                            });
+                                        }
+                                    }
+                                }
+                                break;
+                            }
+                            case "lesson_2": {
+                                Map<String, Object> fNameMap = (Map<String, Object>) e.getValue();
+                                for (Map.Entry<String, Object> dataEntry : fNameMap.entrySet()) {
+                                    if (dataEntry.getKey().equals("completed")) {
+                                        if (dataEntry.getValue().equals(true)) {
+                                            tvL2.setTextColor(getResources().getColor(R.color.cease_tan));
+                                            tvL2.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
-                                                    Intent i = new Intent(Lessons.this, Lesson7.class);
+                                                    i = new Intent(Lessons.this, Lesson2.class);
                                                     startActivity(i);
                                                 }
                                             });
@@ -214,9 +96,116 @@ public class Lessons extends AppCompatActivity {
                                         }
                                     }
                                 }
+                                break;
                             }
+                            case "lesson_3": {
+                                Map<String, Object> fNameMap = (Map<String, Object>) e.getValue();
+                                for (Map.Entry<String, Object> dataEntry : fNameMap.entrySet()) {
+                                    if (dataEntry.getKey().equals("completed")) {
+                                        if (dataEntry.getValue().equals(true)) {
+                                            tvL3.setTextColor(getResources().getColor(R.color.cease_tan));
+                                            tvL3.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    i = new Intent(Lessons.this, Lesson3.class);
+                                                    startActivity(i);
+                                                }
+                                            });
 
+                                        }
+                                    }
+                                }
+                                break;
+                            }
                         }
+
+                    }
+                } else if(entry.getKey().equals("module_2")) {
+                    Map<String, Object> lesson = (Map<String, Object>) entry.getValue();
+                    for (Map.Entry<String, Object> e : lesson.entrySet()) {
+                        switch (e.getKey()) {
+                            case "lesson_4": {
+                                Map<String, Object> fNameMap = (Map<String, Object>) e.getValue();
+                                for (Map.Entry<String, Object> dataEntry : fNameMap.entrySet()) {
+                                    if (dataEntry.getKey().equals("completed")) {
+                                        if (dataEntry.getValue().equals(true)) {
+                                            tvM2L4.setTextColor(getResources().getColor(R.color.cease_tan));
+                                            tvM2L4.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    i = new Intent(Lessons.this, Lesson4.class);
+                                                    startActivity(i);
+                                                }
+                                            });
+
+                                        }
+                                    }
+                                }
+                                break;
+                            }
+                            case "lesson_5": {
+                                Map<String, Object> fNameMap = (Map<String, Object>) e.getValue();
+                                for (Map.Entry<String, Object> dataEntry : fNameMap.entrySet()) {
+                                    if (dataEntry.getKey().equals("completed")) {
+                                        if (dataEntry.getValue().equals(true)) {
+                                            tvL5.setTextColor(getResources().getColor(R.color.cease_tan));
+                                            tvL5.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    i = new Intent(Lessons.this, Lesson5.class);
+                                                    startActivity(i);
+                                                }
+                                            });
+
+                                        }
+                                    }
+                                }
+                                break;
+                            }
+                            case "lesson_6": {
+                                Map<String, Object> fNameMap = (Map<String, Object>) e.getValue();
+                                for (Map.Entry<String, Object> dataEntry : fNameMap.entrySet()) {
+                                    if (dataEntry.getKey().equals("completed")) {
+                                        if (dataEntry.getValue().equals(true)) {
+                                            tvL6.setTextColor(getResources().getColor(R.color.cease_tan));
+                                            tvL6.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    i = new Intent(Lessons.this, Lesson6.class);
+                                                    startActivity(i);
+                                                }
+                                            });
+
+                                        }
+                                    }
+                                }
+                                break;
+                            }
+                        }
+
+                    }
+                } else {
+                    Map<String, Object> lesson = (Map<String, Object>) entry.getValue();
+                    for (Map.Entry<String, Object> e : lesson.entrySet()) {
+                        if ("lesson_7".equals(e.getKey())) {
+                            Map<String, Object> fNameMap = (Map<String, Object>) e.getValue();
+                            for (Map.Entry<String, Object> dataEntry : fNameMap.entrySet()) {
+                                if (dataEntry.getKey().equals("completed")) {
+                                    if (dataEntry.getValue().equals(true)) {
+                                        tvM3L7.setTextColor(getResources().getColor(R.color.cease_tan));
+                                        tvM3L7.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                Intent i = new Intent(Lessons.this, Lesson7.class);
+                                                startActivity(i);
+                                            }
+                                        });
+
+                                    }
+                                }
+                            }
+                        }
+
                     }
                 }
             }

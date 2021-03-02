@@ -1,11 +1,18 @@
 package com.example.android;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.Constraints;
 
 import android.content.Intent;
+
+import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageView;
+
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -15,18 +22,23 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.mackhartley.roundedprogressbar.RoundedProgressBar;
 
 import java.util.Objects;
+import java.util.Random;
 
 public class Dashboard extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     CollectionReference users = db.collection("users");
+    int width = Resources.getSystem().getDisplayMetrics().widthPixels;
 
     Intent i;
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         ImageView ivMessage = (ImageView) findViewById(R.id.ivMessage);
@@ -37,6 +49,22 @@ public class Dashboard extends AppCompatActivity {
         ImageView ivProfile = (ImageView) findViewById(R.id.ivProfile);
         TextView tvUser = (TextView) findViewById(R.id.tvUser);
 
+
+        RoundedProgressBar progressBar = (RoundedProgressBar) findViewById(R.id.progressBar) ;
+       progressBar.setMaxWidth(width);
+
+         progressBar.showProgressText(true);
+
+
+
+
+
+
+
+
+
+
+         progressBar.setBackgroundColor(getResources().getColor(R.color.cease_tan));
         Query query = users.whereEqualTo("email",user.getEmail());
 
         query.get()
@@ -45,6 +73,8 @@ public class Dashboard extends AppCompatActivity {
 
                         for (QueryDocumentSnapshot document : Objects.requireNonNull(user.getResult())) {
                             tvUser.setText(Objects.requireNonNull(document.get("username")).toString());
+                            progressBar.setProgressPercentage(75,false);
+
                         }
                     }
 
